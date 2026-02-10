@@ -1259,9 +1259,14 @@ h6 {
     border-top: none !important;
 }
 
-/* Fix for rogue line above defensor section */
+/* Fix for rogue line above defensor section and spacing */
 #fianzas-seccion {
     border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+#servicios-detalle {
+    padding-bottom: 0 !important;
 }
 
 .defensor-grid {
@@ -1532,6 +1537,8 @@ h6 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    align-items: start;
+    /* Fix for adjacent item expansion */
 }
 
 @media (max-width: 768px) {
@@ -1562,49 +1569,53 @@ h6 {
 .faq-question {
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* Change to row for better left alignment layout */
     align-items: center;
-    /* Centered alignment */
-    justify-content: center;
-    /* Vertical centering */
+    justify-content: space-between;
+    /* Space between text and icon */
     gap: 15px;
     cursor: pointer;
     background: transparent;
     transition: background 0.3s ease;
-    min-height: 120px;
-    /* Increased slightly for better spacing */
-    text-align: center;
-    /* Text centering */
+    min-height: 100px;
+    text-align: left;
+    /* Verify text alignment */
 }
 
 .faq-question h4 {
-    font-size: 20px;
-    /* Increased from 16px */
+    font-size: 18px;
+    /* Slightly reduced for better fit */
     color: var(--primary);
     margin: 0;
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* Center flex content */
+    justify-content: flex-start;
+    /* Left align content */
     gap: 10px;
     line-height: 1.4;
-    width: 100%;
-    /* Ensure it takes full width for centering */
+    flex: 1;
+    /* Allow text to take available space */
 }
 
 .faq-question h4 span {
     color: var(--secondary);
     font-weight: 800;
-    opacity: 0.3;
-    font-size: 12px;
+    opacity: 0.5;
+    /* Increased opacity for visibility */
+    font-size: 14px;
     transition: var(--transition);
+    min-width: 25px;
+    /* Ensure number doesn't shift */
 }
 
 .faq-question i {
     align-self: center;
-    /* Center the icon */
-    margin-top: 10px;
+    margin-top: 0;
+    /* Remove top margin in row layout */
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
 }
 
 .faq-item:hover h4 span,
