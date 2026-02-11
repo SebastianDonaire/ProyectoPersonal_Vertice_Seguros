@@ -58,12 +58,12 @@ body {
 /* Fix for fixed header overlap on anchor links */
 section[id],
 div[id] {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 100px;
 }
 
 /* Override for snapped sections to avoid centering offsets */
 .why-us-section {
-    scroll-margin-top: 80px !important;
+    scroll-margin-top: 100px !important;
     scroll-margin-bottom: 0 !important;
 }
 
@@ -340,7 +340,7 @@ h6 {
 ================================================================ */
 .hero {
     position: relative;
-    height: 90vh;
+    height: 80vh;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -530,12 +530,16 @@ h6 {
 /* 7. QUOTE SECTION (COTIZADOR)
 ================================================================ */
 .quote-section {
-    padding: 60px 0;
-    background-color: var(--bg-soft);
-    min-height: 80vh;
+    position: relative;
+    padding: 40px 0;
+    height: 90vh;
+    min-height: 90vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    background-color: var(--bg-soft);
     width: 100%;
+    scroll-snap-align: start;
+    scroll-margin-top: 100px !important;
 }
 
 .quote-header {
@@ -668,22 +672,31 @@ h6 {
 .form-group select {
     width: 100%;
     min-width: 100%;
-    /* Asegurar ancho completo */
     padding: 18px;
-    border: 1px solid rgba(29, 61, 118, 0.1);
+    border: 1px solid rgba(29, 61, 118, 0.12);
     border-radius: 12px;
     outline: none;
     transition: var(--transition);
     background-color: var(--bg-soft);
     font-family: var(--font-main);
-    color: var(--text-dark);
+    color: var(--primary);
+    font-size: 17px;
+    font-weight: 500;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--secondary);
     background-color: white;
-    box-shadow: 0 0 0 4px rgba(40, 93, 187, 0.05);
+    box-shadow: 0 10px 25px rgba(40, 93, 187, 0.1);
+}
+
+@media (max-width: 992px) {
+    .quote-section {
+        height: auto;
+        min-height: auto;
+        padding: 80px 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -700,29 +713,29 @@ h6 {
 /* 8. NOSOTROS & STORYTELLING
 ================================================================ */
 .nosotros-section {
-    padding: 60px 0;
+    padding: 0;
     background-color: white;
+    height: 100vh;
     min-height: 100vh;
     display: flex;
     align-items: center;
     width: 100%;
+    scroll-snap-align: center;
 }
 
-.nosotros-intro {
-    max-width: 900px;
-    margin: 0 auto 60px;
+.nosotros-details-section {
+    padding: 100px 0;
+    background-color: white;
+    width: 100%;
 }
 
-.nosotros-intro h2 {
-    font-size: 42px;
-    margin-bottom: 30px;
-}
+/* Eliminado: .nosotros-intro ahora está integrado en .proposito-block */
 
 .proposito-block {
     background: white;
     padding: 0;
     border-radius: var(--radius-lg);
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     overflow: hidden;
     box-shadow: var(--shadow-premium);
     display: grid;
@@ -731,13 +744,34 @@ h6 {
 }
 
 .proposito-content {
-    padding: 80px;
+    padding: 45px 60px;
 }
 
-.proposito-content h3 {
+.proposito-main-title {
+    font-size: 32px;
     color: var(--primary);
-    font-size: 36px;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.proposito-intro-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.proposito-divider {
+    height: 1px;
+    background: rgba(29, 61, 118, 0.1);
+    margin: 20px 0;
+    width: 50px;
+}
+
+.proposito-sub-title {
+    color: var(--primary);
+    font-size: 21px;
+    margin-bottom: 10px;
     line-height: 1.2;
 }
 
@@ -1142,7 +1176,7 @@ h6 {
     position: relative;
     overflow: hidden;
     scroll-snap-align: start;
-    scroll-margin-top: 80px !important;
+    scroll-margin-top: 100px !important;
 }
 
 .quick-insurance h2 {
