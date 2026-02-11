@@ -10,7 +10,6 @@
     --text-muted: rgba(29, 61, 118, 0.6);
     --bg-light: #f4f7fa;
     --bg-soft: #fcfdfe;
-    --bg-white: #ffffff;
 
     /* Transitions & Effects */
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -29,7 +28,6 @@
     --shadow-sm: 0 2px 4px rgba(29, 61, 118, 0.05);
     --shadow-soft: 0 5px 15px rgba(29, 61, 118, 0.04);
     --shadow-md: 0 10px 30px rgba(29, 61, 118, 0.08);
-    --shadow-lg: 0 20px 40px rgba(29, 61, 118, 0.12);
     --shadow-premium: 0 30px 60px rgba(29, 61, 118, 0.15);
     --shadow-hover: 0 15px 45px rgba(29, 61, 118, 0.1);
 }
@@ -1135,66 +1133,6 @@ h6 {
     font-size: 20px;
 }
 
-.fianzas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.fianza-card {
-    background: white;
-    padding: 30px 25px;
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(29, 61, 118, 0.05);
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.fianza-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-    border-color: rgba(40, 93, 187, 0.2);
-}
-
-.icon-box-premium {
-    width: 70px;
-    height: 70px;
-    background: var(--primary-gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-    box-shadow: 0 10px 20px rgba(29, 61, 118, 0.2);
-    margin-bottom: 10px;
-    transition: var(--transition);
-}
-
-.fianza-card:hover .icon-box-premium {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.fianza-card h5 {
-    font-size: 20px;
-    color: var(--primary);
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.fianza-card p {
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
 /* 11. QUICK INSURANCE (PROCESS)
 ================================================================ */
 .quick-insurance {
@@ -1262,7 +1200,7 @@ h6 {
 /* 12. DEFENSOR DEL ASEGURADO
 ================================================================ */
 .defensor-section {
-    padding: 100px 0;
+    padding: 80px 0 100px;
     background-color: var(--bg-soft);
     position: relative;
     overflow: hidden;
@@ -1791,7 +1729,7 @@ h6 {
 /* 13. FAQs SECTION
 ================================================================ */
 .faq-section {
-    padding: 100px 0;
+    padding: 80px 0 100px;
     background-color: var(--bg-soft);
     position: relative;
 }
