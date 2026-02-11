@@ -159,5 +159,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 8. Scroll-based Step Highlighting (Proceso de Reclamación)
+  const defensorSteps = document.querySelector('.defensor-steps');
+  if (defensorSteps) {
+    const stepItems = defensorSteps.querySelectorAll('.step-item-horizontal');
+    let stepsAnimated = false;
+
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !stepsAnimated) {
+          stepsAnimated = true;
+          stepItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('active');
+            }, index * 400);
+          });
+        } else if (!entry.isIntersecting && stepsAnimated) {
+          stepsAnimated = false;
+          stepItems.forEach(item => item.classList.remove('active'));
+        }
+      });
+    }, { threshold: 0.3 });
+
+    stepObserver.observe(defensorSteps);
+  }
+
   console.log('App initialized: Vertice Seguros Clone (v2 legalized)');
 });
