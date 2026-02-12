@@ -186,5 +186,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 9. Defensor Steps Animation (Restored)
+  const stepsTimeline = document.querySelector('.steps-timeline');
+  if (stepsTimeline) {
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+    timelineObserver.observe(stepsTimeline);
+  }
+
+  const stepItems = document.querySelectorAll('.step-item-horizontal');
+  if (stepItems.length > 0) {
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, {
+      threshold: 0.5,
+      rootMargin: "-10% 0px -10% 0px"
+    });
+
+    stepItems.forEach(item => stepObserver.observe(item));
+  }
+
   console.log('App initialized: Vertice Seguros Clone (v2 legalized)');
 });
