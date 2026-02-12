@@ -1,0 +1,31 @@
+/* 
+  ================================================================
+  MAIN STYLESHEET
+  ================================================================
+  Punto de entrada principal para los estilos de la aplicación.
+  Importa todos los módulos CSS en el orden correcto.
+*/
+
+/* 1. Base & Design System */
+@import './base/_variables.css';
+@import './base/_base.css';
+
+/* 2. Components */
+@import './components/_buttons.css';
+@import './components/_forms.css';
+
+/* 3. Layout Sections */
+@import './layout/_header.css';
+@import './layout/_hero.css';
+@import './layout/_quote.css';
+@import './layout/_about.css';
+@import './layout/_why-us.css';
+@import './layout/_stats.css';
+@import './layout/_services.css';
+@import './layout/_defensor.css';
+
+@import './layout/_faq.css';
+@import './layout/_footer.css';
+
+/* 4. Utilities */
+@import './layout/_utilities.css';

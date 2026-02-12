@@ -1,0 +1,238 @@
+/* 
+  ================================================================
+  LAYOUT: ABOUT SECTION (NOSOTROS)
+  ================================================================
+  - Sección principal "Nosotros"
+  - Propósito, Misión, Visión
+  - Valores y Directiva
+*/
+.nosotros-section {
+    padding: 0;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-margin-top: 95px !important;
+}
+
+.nosotros-details-section {
+    padding: 100px 0;
+    background-color: white;
+    width: 100%;
+}
+
+.proposito-block {
+    background: white;
+    padding: 0;
+    border-radius: var(--radius-lg);
+    margin-bottom: 60px;
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.proposito-content {
+    padding: 45px 60px;
+}
+
+.proposito-main-title {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.proposito-intro-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.proposito-divider {
+    height: 1px;
+    background: rgba(29, 61, 118, 0.1);
+    margin: 20px 0;
+    width: 50px;
+}
+
+.proposito-sub-title {
+    color: var(--primary);
+    font-size: 21px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.proposito-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.proposito-image {
+    height: 100%;
+    min-height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.nosotros-card {
+    background: var(--bg-soft);
+    padding: 60px;
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+    border: 1px solid rgba(29, 61, 118, 0.03);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.nosotros-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-premium);
+}
+
+.nosotros-card .icon-box {
+    width: 70px;
+    height: 70px;
+    background: white;
+    color: var(--secondary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 30px;
+}
+
+.nosotros-card h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.nosotros-card p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.valores-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.valor-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(29, 61, 118, 0.03);
+    transition: var(--transition);
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.valor-card:hover h4,
+.valor-card:hover p,
+.valor-card:hover i {
+    color: white;
+}
+
+.valor-card i {
+    font-size: 30px;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.valor-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.valor-card p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.directiva-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.directiva-item {
+    background: var(--bg-soft);
+    padding: 20px 25px;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent);
+}
+
+.directiva-item strong {
+    display: block;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.directiva-item span {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .proposito-block {
+        grid-template-columns: 1fr;
+    }
+
+    .proposito-image {
+        min-height: 300px;
+        order: -1;
+        /* Image on top */
+    }
+
+    .proposito-content {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nosotros-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .nosotros-card {
+        padding: 40px 30px;
+    }
+
+    .proposito-content {
+        padding: 30px 20px;
+    }
+
+    .proposito-main-title {
+        font-size: 28px;
+    }
+}

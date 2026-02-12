@@ -1621,11 +1621,12 @@ h6 {
     font-size: 20px;
 }
 
-/* Instagram Grid */
+/* Instagram Container for Widget */
 .instagram-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: block;
+    width: 100%;
+    min-height: 400px;
+    /* Espacio reservado para evitar layout shift */
 }
 
 .instagram-card {

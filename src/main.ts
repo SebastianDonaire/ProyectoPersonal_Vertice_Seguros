@@ -1,10 +1,15 @@
 // Main entry point for Vertice Seguros Clone
+import './styles/main.css';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Preloader
   const preloader = document.getElementById('preloader');
   if (preloader) {
     window.addEventListener('load', () => {
+      // Force scroll to top on reload
+      window.scrollTo(0, 0);
+
       setTimeout(() => {
         preloader.classList.add('fade-out');
       }, 500);
@@ -160,39 +165,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Scroll-based Step Highlighting (Proceso de Reclamación)
-  // Primero, animar la línea de fondo
-  const stepsTimeline = document.querySelector('.steps-timeline');
-  if (stepsTimeline) {
-    const timelineObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.3
-    });
-    timelineObserver.observe(stepsTimeline);
-  }
+  // 8. Mobile Menu Toggle
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.nav');
 
-  // Luego, animar los steps individuales
-  const stepItems = document.querySelectorAll('.step-item-horizontal');
-  if (stepItems.length > 0) {
-    const stepObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        } else {
-          entry.target.classList.remove('active');
-        }
-      });
-    }, {
-      threshold: 0.5,
-      rootMargin: "-10% 0px -10% 0px" // Margen para que se active/desactive un poco antes de salir/entrar totalmente
+  if (mobileToggle && nav) {
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
     });
 
-    stepItems.forEach(item => stepObserver.observe(item));
+    // Close menu when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
   }
 
   console.log('App initialized: Vertice Seguros Clone (v2 legalized)');

@@ -1,0 +1,41 @@
+/* 
+  ================================================================
+  1. VARIABLES & DESIGN SYSTEM
+  ================================================================
+  Definición de tokens de diseño globales:
+  - Colores: Paleta principal de Vértice Seguros
+  - Tipografía: Fuentes principales (Jost y Barlow)
+  - Radios de borde: Para consistencia en UI
+  - Sombras: Sistema de elevación
+*/
+:root {
+    /* Colors */
+    --primary: #1D3D76;
+    --primary-gradient: linear-gradient(135deg, #1D3D76 0%, #285DBB 100%);
+    --secondary: #285DBB;
+    --accent: #E72B50;
+    --text-dark: #1D3D76;
+    --text-muted: rgba(29, 61, 118, 0.6);
+    --bg-light: #f4f7fa;
+    --bg-soft: #fcfdfe;
+
+    /* Transitions & Effects */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --container-max: 1200px;
+
+    /* Typography */
+    --font-main: 'Jost', sans-serif;
+    --font-heading: 'Barlow', sans-serif;
+
+    /* Border Radius */
+    --radius-pill: 50px;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+
+    /* Modern multi-layered shadows */
+    --shadow-sm: 0 2px 4px rgba(29, 61, 118, 0.05);
+    --shadow-soft: 0 5px 15px rgba(29, 61, 118, 0.04);
+    --shadow-md: 0 10px 30px rgba(29, 61, 118, 0.08);
+    --shadow-premium: 0 30px 60px rgba(29, 61, 118, 0.15);
+    --shadow-hover: 0 15px 45px rgba(29, 61, 118, 0.1);
+}

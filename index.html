@@ -4,1086 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertice Seguros – Compañía de seguros en Venezuela (RCV – Automovil – HCM)</title>
-    <link rel="icon" href="https://verticeseguros.com.ve/wp-content/uploads/2025/03/cropped-icono-nuevo-1-32x32.png"
-        sizes="32x32" />
+    <meta name="description"
+        content="Vértice Seguros - Soluciones de seguros adaptadas a tus necesidades. Cotiza en línea: Salud, Automóvil, Patrimoniales y Fianzas.">
+    <meta name="keywords" content="Seguros, Venezuela, Salud, Automóvil, Fianzas, Vértice Seguros, Poliza, Cotización">
+    <meta name="author" content="Vértice Seguros C.A.">
+    <meta property="og:title" content="Vértice Seguros | Conectados para protegerte">
+    <meta property="og:description"
+        content="Cotiza tu seguro en minutos. Ofrecemos protección integral para ti, tu familia y tu patrimonio.">
+    <meta property="og:image" content="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg">
+    <meta property="og:url" content="https://verticeseguros.com.ve">
+    <link rel="icon" type="image/svg+xml" href="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg">
+
+    <!-- Fonts: Google Fonts (Preload for performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Vértice Seguros Venezuela: Pólizas de Salud, Automóvil y Patrimoniales con atención inmediata y cobertura nacional. Cotiza tu seguro online en minutos.">
-    <meta name="keywords"
-        content="seguros venezuela, seguro hcm, seguro automovil, poliza rcv, vertice seguros, cotizador online">
-    <meta name="author" content="Vértice Seguros">
-    <link rel="canonical" href="https://verticeseguros.com.ve/">
+    <title>Vértice Seguros | Conectados para protegerte</title>
+</head>
+<style>
+    /* CRITICAL: Preloader Styles Inlined to prevent FOUC */
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
 
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://verticeseguros.com.ve/">
-    <meta property="og:title" content="Vértice Seguros | Protección Total a tu Alcance">
-    <meta property="og:description"
-        content="Cotiza tu seguro de salud, auto o patrimonial en minutos. Atención nacional 24/7 y planes a tu medida.">
-    <meta property="og:image" content="https://verticeseguros.com.ve/wp-content/uploads/2024/06/banner-13.jpg">
+    #preloader.fade-out {
+        opacity: 0;
+        visibility: hidden;
+    }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Vértice Seguros | Protección Total a tu Alcance">
-    <meta property="twitter:description"
-        content="Cotiza tu seguro de salud, auto o patrimonial en minutos. Atención nacional 24/7.">
-    <meta property="twitter:image" content="https://verticeseguros.com.ve/wp-content/uploads/2024/06/banner-13.jpg">
+    .loader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loader-logo {
+        width: 120px;
+        margin-bottom: 20px;
+        animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .loader-bar {
+        width: 150px;
+        height: 4px;
+        background: rgba(29, 61, 118, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .loader-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: #1D3D76;
+        /* var(--primary) hardcoded for immediate load */
+        animation: loadBar 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            opacity: 0.8;
+        }
+
+        50% {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0.95);
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes loadBar {
+        0% {
+            left: -40%;
+        }
+
+        100% {
+            left: 100%;
+        }
+    }
+</style>
 </head>
 
 <body>
     <div id="app">
         <!-- Preloader -->
-        <div id="preloader" class="preloader">
-            <div class="preloader-content">
-                <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text="V">V</span>
-                    <span data-text="É">É</span>
-                    <span data-text="R">R</span>
-                    <span data-text="T">T</span>
-                    <span data-text="I">I</span>
-                    <span data-text="C">C</span>
-                    <span data-text="E">E</span>
-                </div>
+        <div id="preloader">
+            <div class="loader-content">
+                <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg" alt="Vértice Seguros"
+                    class="loader-logo">
+                <div class="loader-bar"></div>
             </div>
         </div>
 
-        <!-- Header -->
-        <header class="header">
-            <div class="container container-header">
-                <div class="logo">
-                    <a href="/">
-                        <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                            alt="Vértice Seguros Logo">
-                    </a>
-                </div>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="/" class="active">Inicio</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li class="has-submenu">
-                            <a href="#">Productos <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                <li><a href="#salud-seccion">Salud</a></li>
-                                <li><a href="#automovil-seccion">Automóvil</a></li>
-                                <li><a href="#patrimoniales-seccion">Patrimoniales</a></li>
-                                <li><a href="#fianzas-seccion">Fianzas</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#faqs">Preguntas Frecuentes</a></li>
-                        <li><a href="#mapa">Ubicación</a></li>
-                        <li><a href="#defensor">Defensor del asegurado</a></li>
-                    </ul>
-                </nav>
-                <div class="header-action">
-                    <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-                </div>
-                <button class="mobile-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
+        {{> header }}
 
         <main>
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="hero-slider">
-                    <div class="hero-slide active"
-                        style="background-image: url('https://verticeseguros.com.ve/wp-content/uploads/2024/06/banner-13.jpg');">
-                        <div class="overlay"></div>
-                        <div class="container">
-                            <div class="hero-content">
-                                <h2>Conectados para protegerte</h2>
-                                <p>En Vértice Seguros las pólizas de salud se adaptan a ti, resguarda a tu grupo
-                                    familiar con nuestros planes y servicios de forma rápida.</p>
-                                <a href="#cotizar" class="btn btn-primary">COTIZAR AHORA</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-slide"
-                        style="background-image: url('https://verticeseguros.com.ve/wp-content/uploads/2025/01/car-vertice-scaled.webp');">
-                        <div class="overlay"></div>
-                        <div class="container">
-                            <div class="hero-content">
-                                <h2>Asegura tu vehículo y paga en cuotas</h2>
-                                <p>Ya no tendrás excusa para resguardar tu vehículo con nuestras pólizas fraccionadas.
-                                </p>
-                                <a href="#cotizar" class="btn btn-primary">COTIZAR AHORA</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-side">
-                    <a href="https://www.instagram.com/verticeseguros_ve/" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <span>@verticeseguros_ve</span>
-                </div>
-                <!-- Scroll Indicator -->
-                <div class="scroll-indicator">
-                    <div class="mouse">
-                        <div class="wheel"></div>
-                    </div>
-                </div>
-            </section>
+            {{> hero }}
 
-            <!-- Cotizador Section -->
-            <section id="cotizar" class="quote-section reveal">
-                <div class="container quote-container">
-                    <div class="quote-tabs-wrapper">
-                        <div class="quote-image">
-                            <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/10/men-2.webp"
-                                alt="Asesor de seguros Vértice ofreciendo atención personalizada" loading="lazy"
-                                width="600" height="auto">
-                        </div>
-                        <div class="quote-tabs-content">
-                            <div class="quote-header">
-                                <span class="sub-title">Cotiza en Vértice Seguros</span>
-                                <h2>Solicita tu Cotización Fácil y Segura</h2>
-                            </div>
-                            <div class="tabs-buttons">
-                                <button class="tab-btn active" data-tab="salud">Salud</button>
-                                <button class="tab-btn" data-tab="personas">Personas</button>
-                                <button class="tab-btn" data-tab="automovil">Automóvil</button>
-                                <button class="tab-btn" data-tab="patrimoniales">Patrimoniales</button>
-                                <button class="tab-btn" data-tab="fianzas">Fianzas</button>
-                            </div>
-                            <div class="tabs-body">
-                                <!-- Formulario Salud (Default) -->
-                                <div id="salud" class="tab-pane active">
-                                    <form class="quote-form">
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Nombre y Apellido" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Edad del Titular" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Edad grupo asegurado" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <select required>
-                                                    <option value="" disabled selected>Sexo</option>
-                                                    <option value="Femenino">Femenino</option>
-                                                    <option value="Masculino">Masculino</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="tel" placeholder="Teléfono" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" placeholder="Correo Electrónico" required>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
-                                    </form>
-                                </div>
+            {{> quote-form }}
 
-                                <!-- Formulario Personas -->
-                                <div id="personas" class="tab-pane">
-                                    <form class="quote-form">
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <select required>
-                                                    <option value="" disabled selected>Producto</option>
-                                                    <option value="Accidentes Personales">Accidentes Personales</option>
-                                                    <option value="Servicios Funerario">Servicios Funerario</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Nombre y Apellido" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Edad del Titular" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="tel" placeholder="Teléfono" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="email" placeholder="Correo Electrónico" required>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
-                                    </form>
-                                </div>
+            {{> about }}
 
-                                <!-- Formulario Automóvil -->
-                                <div id="automovil" class="tab-pane">
-                                    <form class="quote-form">
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <select required>
-                                                    <option value="" disabled selected>Tipo de Producto</option>
-                                                    <option value="Cobertura Amplia">Cobertura Amplia</option>
-                                                    <option value="Pérdida Total">Pérdida Total</option>
-                                                    <option value="RCV Básico de Ley">RCV Básico de Ley</option>
-                                                    <option value="RCV con Exceso">RCV con Exceso</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Nombre y Apellido" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Marca" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Modelo" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Año del Vehículo" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="tel" placeholder="Teléfono" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="email" placeholder="Correo Electrónico" required>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
-                                    </form>
-                                </div>
-                                <!-- Formulario Patrimoniales -->
-                                <div id="patrimoniales" class="tab-pane">
-                                    <form class="quote-form">
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Nombre y Apellido" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="CI o RIF" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="¿Qué producto deseas cotizar?" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="tel" placeholder="Teléfono" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="email" placeholder="Correo Electrónico" required>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
-                                    </form>
-                                </div>
+            {{> why-us }}
 
-                                <!-- Formulario Fianzas -->
-                                <div id="fianzas" class="tab-pane">
-                                    <form class="quote-form">
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Nombre y Apellido" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="RIF" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Ubicación" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <select required>
-                                                    <option value="" disabled selected>Tipo de Fianza</option>
-                                                    <option value="Mantenimiento de la Oferta">Mantenimiento de la
-                                                        Oferta</option>
-                                                    <option value="Fianza de Anticipo">Fianza de Anticipo</option>
-                                                    <option value="Fianza de fiel cumplimiento">Fianza de fiel
-                                                        cumplimiento</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <input type="tel" placeholder="Teléfono" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" placeholder="Correo Electrónico" required>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </section>
+            {{> services }}
 
-            <!-- Why Choose Us Section -->
-            <section id="reasons" class="why-us-section reveal">
-                <div class="why-us-background">
-                    <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1200&auto=format&fit=crop"
-                        alt="Familia feliz y protegida disfrutando al aire libre" loading="lazy">
-                    <div class="why-us-overlay"></div>
-                </div>
-                <div class="why-us-body">
-                    <div class="why-us-content">
-                        <span class="sub-title-line">— ¿POR QUÉ VÉRTICE SEGUROS?</span>
-                        <h2 class="why-title">Grandes razones hacen que nos elijas</h2>
-                        <p class="why-description">
-                            En Vértice Seguros tu tranquilidad es nuestra prioridad. Contamos con atención personalizada
-                            y coberturas adaptadas a tus necesidades. Además, ofrecemos procesos ágiles, respaldo
-                            confiable y un equipo con amplia experiencia, siempre dispuesto a ayudarte.
-                        </p>
+            {{> defensor }}
 
-                        <ul class="why-benefits">
-                            <li><i class="far fa-check-circle"></i> Experiencia y Confianza</li>
-                            <li><i class="far fa-check-circle"></i> Coberturas Flexibles</li>
-                            <li><i class="far fa-check-circle"></i> Atención Personalizada</li>
-                            <li><i class="far fa-check-circle"></i> Procesos Ágiles</li>
-                            <li><i class="far fa-check-circle"></i> Respaldo Garantizado</li>
-                            <li><i class="far fa-check-circle"></i> Innovación y Tecnología</li>
-                            <li><i class="far fa-check-circle"></i> Contamos con Inspecciones In Situ</li>
-                        </ul>
 
-                        <div class="why-footer-logo">
-                            <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                                alt="Logo Vértice Seguros - Respaldo Garantizado" loading="lazy" width="150"
-                                height="auto">
-                        </div>
-                    </div>
-                </div>
-                <div class="satisfaction-badge">
-                    <div class="star-rating">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="rating-text">
-                        <strong>8.3 Clientes</strong>
-                        <span>Satisfechos</span>
-                    </div>
-                </div>
-            </section>
         </main>
 
-        <!-- Quick Insurance Section -->
-        <section class="quick-insurance reveal">
-            <div class="container centred">
-                <span class="sub-title">Obtén un seguro rápido y asequible con nosotros</span>
-                <h2>Simplificamos el proceso para que consigas la cobertura que necesitas en minutos</h2>
-                <div class="steps-grid">
-                    <div class="step-item">
-                        <span class="step-number">01</span>
-                        <h3>Personaliza tu plan</h3>
-                        <p>Elige la cobertura que se adapte a tus necesidades.</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">02</span>
-                        <h3>Obtén tu cotización</h3>
-                        <p>En pocos minutos de forma transparente.</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">03</span>
-                        <h3>Emite y Paga</h3>
-                        <p>Concreta tu póliza de forma rápida y segura.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Nosotros: El Corazón (Card Principal) -->
-        <section id="nosotros" class="nosotros-section reveal">
-            <div class="container">
-                <div class="proposito-block">
-                    <div class="proposito-content">
-                        <span class="sub-title">Vértice Seguros, C.A.</span>
-                        <h2 class="proposito-main-title">Conectados para protegerte</h2>
-                        <p class="proposito-intro-text">Vértice Seguros es una empresa del sector asegurador que comenzó
-                            sus operaciones el 29 de diciembre de 2020. Con un capital y talento humano completamente
-                            venezolano, brindando protección hoy y tranquilidad siempre.</p>
-
-                        <div class="proposito-divider"></div>
-
-                        <span class="sub-title">Nuestro Propósito</span>
-                        <h3 class="proposito-sub-title">Excelencia y Vocación de Servicio</h3>
-                        <p>Queremos ser una empresa destacada y comprometida en proporcionar soluciones eficientes a
-                            todos nuestros asegurados, intermediarios y aliados comerciales; de manera innovadora, ágil
-                            y tecnológica.</p>
-
-                        <div class="sudeaseg-badge">
-                            <i class="fas fa-shield-halved"></i>
-                            <span>Respaldado con la aprobación de la <a
-                                    href="https://www.sudeaseg.gob.ve/sujetos-regulados-ori/"><strong>Sudeaseg
-                                        (ES-124)</strong></a></span>
-                        </div>
-                    </div>
-                    <div class="proposito-image"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Nosotros: Cultura y Detalles -->
-        <section class="nosotros-details-section reveal">
-            <div class="container">
-                <div class="nosotros-grid">
-                    <div class="nosotros-card">
-                        <div class="icon-box"><i class="fas fa-bullseye"></i></div>
-                        <h3>Misión</h3>
-                        <p>Proveer soluciones innovadoras y de alta calidad a nuestros asegurados, intermediarios y
-                            aliados comerciales, fomentando relaciones de confianza en nuestra gestión, para su
-                            protección y tranquilidad a través de nuestros productos.</p>
-                    </div>
-                    <div class="nosotros-card">
-                        <div class="icon-box"><i class="fas fa-eye"></i></div>
-                        <h3>Visión</h3>
-                        <p>Ser empresa líder en el mercado asegurador, reconocida por su innovación, integridad y
-                            excelencia en el servicio, estableciendo una presencia significativa en el territorio
-                            nacional.</p>
-                    </div>
-                </div>
-
-                <div class="valores-expanded">
-                    <div class="centred mb-40">
-                        <span class="sub-title">Nuestra Cultura</span>
-                        <h3>Valores que guían nuestra gestión</h3>
-                    </div>
-                    <div class="valores-grid-detailed">
-                        <div class="valor-card">
-                            <i class="fas fa-handshake"></i>
-                            <h4>Honestidad</h4>
-                            <p>Transparencia y rectitud en cada operación.</p>
-                        </div>
-                        <div class="valor-card">
-                            <i class="fas fa-check-circle"></i>
-                            <h4>Responsabilidad</h4>
-                            <p>Cumplimiento oportuno de compromisos.</p>
-                        </div>
-                        <div class="valor-card">
-                            <i class="fas fa-heart"></i>
-                            <h4>Confianza</h4>
-                            <p>Relaciones sólidas basadas en respaldo.</p>
-                        </div>
-                        <div class="valor-card">
-                            <i class="fas fa-medal"></i>
-                            <h4>Compromiso</h4>
-                            <p>Superación constante de expectativas.</p>
-                        </div>
-                        <div class="valor-card">
-                            <i class="fas fa-sync-alt"></i>
-                            <h4>Adaptabilidad</h4>
-                            <p>Evolución con el mercado asegurador.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="directiva-title centred mb-40">
-                    <h3>Junta Directiva</h3>
-                </div>
-                <div class="directiva-list">
-                    <div class="directiva-item">
-                        <strong>FABIÁN ELIANTONIO</strong>
-                        <span>PRESIDENTE JUNTA DIRECTIVA</span>
-                    </div>
-                    <div class="directiva-item">
-                        <strong>JUAN BRAVO</strong>
-                        <span>PRESIDENTE EJECUTIVO</span>
-                    </div>
-                    <div class="directiva-item">
-                        <strong>ALEJANDRO ESIS</strong>
-                        <span>DIRECTOR</span>
-                    </div>
-                    <div class="directiva-item">
-                        <strong>NELSON GARCÍA</strong>
-                        <span>DIRECTOR</span>
-                    </div>
-                    <div class="directiva-item">
-                        <strong>SANTIAGO SABAL</strong>
-                        <span>DIRECTOR</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Impact Section -->
-        <section class="stats-section reveal">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-history"></i></div>
-                        <div class="stat-content">
-                            <h3 class="stat-number" data-target="5">0</h3>
-                            <span class="stat-plus">+</span>
-                            <p>Años de Trayectoria</p>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <div class="stat-content">
-                            <h3 class="stat-text-simple">Atención</h3>
-                            <p>Nacional</p>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-bolt"></i></div>
-                        <div class="stat-content">
-                            <h3 class="stat-number" data-target="10">0</h3>
-                            <span class="stat-suffix">Min</span>
-                            <p>Tiempo de Respuesta</p>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-users"></i></div>
-                        <div class="stat-content">
-                            <h3 class="stat-number" data-target="98">0</h3>
-                            <span class="stat-suffix">%</span>
-                            <p>Usuarios Atendidos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Detalle de Productos Expandido -->
-        <section id="servicios-detalle" class="services-detail reveal">
-            <div class="container">
-                <!-- Detalle de Salud -->
-                <div id="salud-seccion" class="service-block">
-                    <div class="service-header">
-                        <span class="sub-title">Salud Integral</span>
-                        <h2>Nuestras Pólizas de Salud</h2>
-                    </div>
-                    <div class="service-content-grid">
-                        <div class="service-text">
-                            <p>Atención médica integral y accesible ante cualquier emergencia, garantizando consultas,
-                                hospitalización y tratamientos especializados.</p>
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-laptop-medical"></i> <strong>Telemedicina:</strong> Atención rápida
-                                    desde tu hogar.</li>
-                                <li><i class="fas fa-user-md"></i> <strong>Medicina Domiciliaria:</strong> Atención en
-                                    casa para casos no hospitalarios.</li>
-                                <li><i class="fas fa-hospital"></i> <strong>Red de Clínicas:</strong> Acceso a los
-                                    mejores centros de salud nacional.</li>
-                                <li><i class="fas fa-baby-carriage"></i> <strong>Maternidad:</strong> Cuidado integral
-                                    prenatal, parto y postparto.</li>
-                                <li><i class="fas fa-ambulance"></i> <strong>Ambulancia:</strong> Traslado inmediato
-                                    24/7.</li>
-                            </ul>
-                        </div>
-                        <div class="service-image">
-                            <img src="https://verticeseguros.com.ve/wp-content/uploads/2024/06/banner-13.jpg"
-                                alt="Atención médica integral en clínicas de Venezuela" class="rounded-img"
-                                loading="lazy">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Automovil Detalle -->
-                <div id="automovil-seccion" class="service-block reverse">
-                    <div class="service-header">
-                        <span class="sub-title">Seguridad Vial</span>
-                        <h2>Pólizas de Automóvil</h2>
-                    </div>
-                    <div class="service-content-grid">
-                        <div class="service-image">
-                            <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/01/car-vertice-scaled.webp"
-                                alt="Seguro de automóvil con asistencia vial" class="rounded-img" loading="lazy">
-                        </div>
-                        <div class="service-text">
-                            <p>Protección frente a accidentes, robos y responsabilidad civil con asistencia vial rápida
-                                en todo el país.</p>
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-car-crash"></i> <strong>Daños Propios:</strong> Cobertura por
-                                    colisión, vuelco o accidentes.</li>
-                                <li><i class="fas fa-user-shield"></i> <strong>Responsabilidad Civil (RCV):</strong>
-                                    Protección ante daños a terceros.</li>
-                                <li><i class="fas fa-shuttle-van"></i> <strong>Asistencia Vial:</strong> Grúa y auxilio
-                                    mecánico permanente.</li>
-                                <li><i class="fas fa-tools"></i> <strong>Talleres Aliados:</strong> Multiservicios
-                                    Ecocars, LeMans, Pintucars y más.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Patrimoniales Detalle -->
-                <div id="patrimoniales-seccion" class="service-block">
-                    <div class="service-header">
-                        <span class="sub-title">Protección de Bienes</span>
-                        <h2>Seguros Patrimoniales</h2>
-                    </div>
-                    <div class="service-content-grid">
-                        <div class="service-text">
-                            <p>Resguarda tu hogar, empresa o industria contra imprevistos como incendios, robos o
-                                desastres naturales, garantizando la continuidad de tu patrimonio.</p>
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-home"></i> <strong>Residencial:</strong> Protección para tu
-                                    vivienda y
-                                    contenidos.</li>
-                                <li><i class="fas fa-store"></i> <strong>Comercial:</strong> Respaldo para tu negocio o
-                                    pyme.</li>
-                                <li><i class="fas fa-industry"></i> <strong>Industrial:</strong> Cobertura integral para
-                                    grandes riesgos.</li>
-                                <li><i class="fas fa-ship"></i> <strong>Casco de Barcos y Aviones:</strong>
-                                    Aseguramiento
-                                    especializado.</li>
-                            </ul>
-                        </div>
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop"
-                                alt="Protección de patrimonio comercial e industrial" class="rounded-img"
-                                loading="lazy">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fianzas Detalle -->
-                <div id="fianzas-seccion" class="service-block reverse">
-                    <div class="service-header">
-                        <span class="sub-title">Respaldo Legal</span>
-                        <h2>Garantías y Fianzas</h2>
-                    </div>
-                    <div class="service-content-grid">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop"
-                                alt="Firma de contratos y garantías legales" class="rounded-img" loading="lazy">
-                        </div>
-                        <div class="service-text">
-                            <p>Ofrecemos instrumentos financieros sólidos para avalar el cumplimiento de obligaciones
-                                contractules y legales ante organismos públicos y privados.</p>
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-file-signature"></i> <strong>Licitación:</strong> Garantiza el
-                                    sostenimiento de oferta.</li>
-                                <li><i class="fas fa-hand-holding-usd"></i> <strong>Anticipo:</strong> Garantiza el
-                                    reintegro de montos otorgados.</li>
-                                <li><i class="fas fa-shield-alt"></i> <strong>Fiel Cumplimiento:</strong> Respalda la
-                                    ejecución oportuna de obras.</li>
-                                <li><i class="fas fa-users-cog"></i> <strong>Laboral:</strong> Cubre obligaciones y
-                                    prestaciones sociales.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Defensor del Asegurado Section -->
-        <section id="defensor" class="defensor-section reveal">
-            <div class="container">
-                <div class="sec-title centred">
-                    <span class="sub-title">Protección al Asegurado</span>
-                    <h2>Defensor del Asegurado</h2>
-                    <p class="large-text">Una instancia independiente para garantizar tus derechos y resolver cualquier
-                        conflicto de manera imparcial.</p>
-                </div>
-
-                <div class="defensor-grid">
-                    <div class="defensor-info">
-                        <div class="defensor-card info-card">
-                            <div class="icon-box"><i class="fas fa-balance-scale"></i></div>
-                            <h3>¿Quién es el Defensor?</h3>
-                            <p>Es la figura encargada de conocer y resolver las quejas o reclamaciones que los
-                                asegurados, beneficiarios y terceros perjudicados presenten contra la Compañía, siempre
-                                que deriven de un contrato de seguro.</p>
-
-                            <div class="contact-card">
-                                <h4>Contacto Directo</h4>
-                                <ul class="contact-links">
-                                    <li><i class="fas fa-envelope"></i> <a
-                                            href="mailto:defensordelasegurado@verticeseguros.com.ve">defensordelasegurado@verticeseguros.com.ve</a>
-                                    </li>
-                                    <li><a
-                                            href="https://www.google.com/maps/place/V%C3%A9rtice+Seguros,+C.A.+%7C+Empresa+de+Seguros/@10.4913619,-66.8671983,346m/data=!3m1!1e3!4m6!3m5!1s0x43bd8b202b85945b:0x24e0b0380b24e197!8m2!3d10.491345!4d-66.8665257!16s%2Fg%2F11md27lm7z?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"><i
-                                                class="fas fa-map-marker-alt"></i> Av. Francisco de Miranda, Edif. Torre
-                                            Country Club, Piso 11, Oficina N 11, Chacao, Caracas.</li></a>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="defensor-card download-card">
-                            <div class="download-content">
-                                <h3>Formulario de Reclamación</h3>
-                                <p>Descarga el formato oficial para presentar tu caso ante el Defensor del Asegurado.
-                                </p>
-                                <a href="https://verticeseguros.com.ve/wp-content/uploads/2025/08/FORMULARIO-UNICO-RECLAMO-ATENCION-ASEGURADO.pdf"
-                                    class="btn btn-primary"><i class="fas fa-file-download"></i> Descargar
-                                    Planilla</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="defensor-steps">
-                        <h3>Proceso de Reclamación</h3>
-                        <div class="steps-timeline">
-                            <div class="step-item-horizontal">
-                                <div class="step-icon">01</div>
-                                <div class="step-text">
-                                    <h4>Reclamo en Atención al Ciudadano</h4>
-                                    <p>Presenta tu caso ante nuestra oficina de Atención al Ciudadano y espera la
-                                        respuesta formal (máx. 20 días hábiles).</p>
-                                </div>
-                            </div>
-                            <div class="step-item-horizontal">
-                                <div class="step-icon">02</div>
-                                <div class="step-text">
-                                    <h4>Inconformidad con la Respuesta</h4>
-                                    <p>Si la respuesta no es satisfactoria o ha transcurrido el tiempo legal sin
-                                        recibirla, puedes acudir al Defensor.</p>
-                                </div>
-                            </div>
-                            <div class="step-item-horizontal">
-                                <div class="step-icon">03</div>
-                                <div class="step-text">
-                                    <h4>Decisión del Defensor</h4>
-                                    <p>El Defensor emitirá una resolución vinculante para la Compañía si tú decides
-                                        aceptarla, garantizando imparcialidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Instagram Feed Section -->
-        <section class="instagram-section reveal">
-            <div class="container">
-                <div class="instagram-header">
-                    <div class="instagram-profile">
-                        <div class="instagram-avatar">
-                            <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                                alt="Vértice Seguros" loading="lazy">
-                        </div>
-                        <div class="instagram-info">
-                            <h3>verticeseguros_ve</h3>
-                            <p>Síguenos en Instagram</p>
-                        </div>
-                    </div>
-                    <a href="https://www.instagram.com/verticeseguros_ve/" target="_blank" class="btn-instagram">
-                        <i class="fab fa-instagram"></i> Seguir en Instagram
-                    </a>
-                </div>
-
-                <div class="instagram-grid">
-                    <!-- Post 1: Carnavales -->
-                    <a href="https://www.instagram.com/p/DUlR0Bjj32z/" target="_blank" class="instagram-card"
-                        data-shortcode="DUlR0Bjj32z">
-                        <div class="instagram-card-bg"
-                            style="background-image: url('https://scontent-fra5-1.cdninstagram.com/v/t51.29331519/475458120_17871630983177611_5697201633519842520_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=2XnU03M-7pQQ7kNvgFv0XWd&_nc_zt=23&_nc_ht=scontent-fra5-1.cdninstagram.com&edm=APs17CUBAAAA&_nc_gid=A1KzGv-E4xsczH-p5oE28H_&oh=00_AYAbY6v5GzlRSFb1XMw&oe=699151B9');">
-                        </div>
-                        <div class="instagram-card-overlay carnavales-overlay">
-                            <div class="instagram-post-type"><i class="far fa-clone"></i></div>
-                            <div class="instagram-card-content">
-                                <p class="instagram-card-title">ACTUALIZA TU RCV ANTES DE VIAJAR EN</p>
-                                <h4>CARNAVALES</h4>
-                            </div>
-                            <div class="instagram-card-logo">
-                                <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                                    alt="Vértice Seguros" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="instagram-hover">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </a>
-
-                    <!-- Post 2: Frase motivacional -->
-                    <a href="https://www.instagram.com/p/DUiwgYkD-bM/" target="_blank" class="instagram-card"
-                        data-shortcode="DUiwgYkD-bM">
-                        <div class="instagram-card-bg"
-                            style="background-image: url('https://scontent-fra3-1.cdninstagram.com/v/t51.29331519/475878200_17871626084177611_3541282293466185449_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=Q61lW6q99XQQ7kNvgE6-TDP&_nc_zt=23&_nc_ht=scontent-fra3-1.cdninstagram.com&edm=APs17CUBAAAA&_nc_gid=Awq6P4d3T3oilz4Q&oh=00_AYCb8K0q2Mv6p9eH-D9j-pAedpD-0v6Wf7jE9_&oe=69912061');">
-                        </div>
-                        <div class="instagram-card-overlay quote-overlay">
-                            <div class="instagram-card-content">
-                                <span class="quote-mark">"</span>
-                                <p>El seguro es como una red de seguridad que te ayuda a recuperarte cuando la vida te
-                                    lanza una curva inesperada.</p>
-                            </div>
-                            <div class="instagram-card-logo">
-                                <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                                    alt="Vértice Seguros" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="instagram-hover">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </a>
-
-                    <!-- Post 3: San Valentín -->
-                    <a href="https://www.instagram.com/p/DUdjbJgD6in/" target="_blank" class="instagram-card"
-                        data-shortcode="DUdjbJgD6in">
-                        <div class="instagram-card-bg"
-                            style="background-image: url('https://scontent-fra5-1.cdninstagram.com/v/t51.29331519/475440260_17871609121177611_6336340051659850106_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=5mAy32jgeofRX20w&_nc_zt=23&_nc_ht=scontent-fra5-1.cdninstagram.com&edm=APs17CUBAAAA&_nc_gid=GZl_mAy32jgeofRX20w&oh=00_AYCb8K0q2Mv6p9eH-D9j-pAedpD-0v6Wf7jE9_&oe=69913E25');">
-                        </div>
-                        <div class="instagram-card-overlay valentine-overlay">
-                            <div class="instagram-card-content">
-                                <h4>¡REGALA AMOR CON VÉRTICE!</h4>
-                                <p>Porque proteger su futuro es la forma más pura de decir 'te quiero'.</p>
-                            </div>
-                            <div class="instagram-card-logo">
-                                <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                                    alt="Vértice Seguros" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="instagram-hover">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </a>
-
-                    <!-- Post 4: Defensora del Asegurado -->
-                    <a href="https://www.instagram.com/reel/DUa-svyj-HB/" target="_blank" class="instagram-card"
-                        data-shortcode="DUa-svyj-HB">
-                        <div class="instagram-card-bg"
-                            style="background-image: url('https://scontent-fra3-1.cdninstagram.com/v/t51.29331519/475440260_17871609121177611_6336340051659850106_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=GZl_mAy32jgeofRX20w&_nc_zt=23&_nc_ht=scontent-fra3-1.cdninstagram.com&edm=APs17CUBAAAA&_nc_gid=GZl_mAy32jgeofRX20w&oh=00_AYCb8K0q2Mv6p9eH-D9j-pAedpD-0v6Wf7jE9_&oe=69913E25');">
-                        </div>
-                        <div class="instagram-card-overlay defensor-overlay">
-                            <div class="instagram-post-type"><i class="fas fa-play"></i></div>
-                            <div class="instagram-card-content">
-                                <p class="instagram-card-label">Vértice Seguros</p>
-                                <h4>EMILY RAMÍREZ</h4>
-                                <p class="instagram-card-role">Defensora del Asegurado</p>
-                            </div>
-                            <div class="instagram-card-logo">
-                                <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                                    alt="Vértice Seguros" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="instagram-hover">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mapa Section -->
-        <section id="mapa" class="map-section reveal">
-            <div class="container">
-                <div class="sec-title centred">
-                    <span class="sub-title">Nuestra Ubicación</span>
-                    <h2>Encuéntranos en Caracas</h2>
-                    <p class="large-text">Visítanos en nuestra sede principal ubicada en el corazón financiero de la
-                        ciudad.</p>
-                </div>
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1570.0!2d-66.86721082531065!3d10.49134508963953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43bd8b202b85945b%3A0x24e0b0380b24e197!2zVsOpcnRpY2UgU2VndXJvcywgQy5BLiB8IEVtcHJlc2EgZGUgU2VndXJvcw!5e0!3m2!1ses!2sve!4v1738700000000!5m2!1ses!2sve"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                    <div class="map-address">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Avenida Francisco de Miranda con Av. El Parque, Edificio Torre Country Club, Piso 11,
-                            Oficina N 11, Chacao. Caracas.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQs Section -->
-        <section id="faqs" class="faq-section reveal">
-            <div class="container">
-                <div class="sec-title centred">
-                    <span class="sub-title">¿Tienes dudas?</span>
-                    <h2>Preguntas Frecuentes</h2>
-                </div>
-                <div class="faq-accordion">
-                    <!-- Q1 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>01.</span> ¿Quién es Vértice Seguros?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Vértice Seguros es una empresa dedicada a ofrecer soluciones de seguros adaptadas a las
-                                necesidades de nuestros clientes. Con un enfoque en la calidad del servicio y la
-                                protección integral, nuestro compromiso es brindar tranquilidad y seguridad, respaldados
-                                por un equipo profesional y una sólida red de reaseguradores.</p>
-                        </div>
-                    </div>
-                    <!-- Q2 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>02.</span> ¿Qué tipos de seguros ofrece Vértice Seguros?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Contamos con una amplia gama de productos que incluyen: Seguros de Automóvil, Seguros de
-                                Salud, Seguros de Accidentes Personales, Servicios Funerarios, Fianzas y Seguros
-                                Patrimoniales, incluyendo Embarcación y Aviación.</p>
-                        </div>
-                    </div>
-                    <!-- Q3 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>03.</span> ¿Cómo puedo obtener una cotización de seguro?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>¡Es muy fácil! Puedes elegir cualquiera de las siguientes opciones: a través de nuestra
-                                página web completando los campos en el formulario, por correo electrónico a
-                                cotizaciones@verticeseguros.com.ve, contactando a tu asesor de seguros o visitando
-                                nuestras oficinas.</p>
-                        </div>
-                    </div>
-                    <!-- Q4 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>04.</span> ¿Qué cubre el seguro de automóvil?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Nuestro seguro ofrece: Daños Propios (accidente, vandalismo o desastres naturales),
-                                Responsabilidad Civil ante terceros, Asistencia Vial 24/7 (remolque, auxilio mecánico),
-                                Accidentes Personales para ocupantes y Defensa Penal.</p>
-                        </div>
-                    </div>
-                    <!-- Q5 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>05.</span> ¿Cómo funciona el seguro de salud?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Nuestros planes de salud cubren gastos médicos por enfermedades o accidentes, con
-                                opciones individuales y colectivas que garantizan acceso a consultas, hospitalización y
-                                tratamientos en nuestra red de centros afiliados.</p>
-                        </div>
-                    </div>
-                    <!-- Q6 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>06.</span> ¿Qué incluye la asistencia vial?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Consiste en un servicio de atención 24/7 en todo el país que incluye: servicio de
-                                grúa/remolque, auxilio mecánico básico, cambio de caucho, suministro de combustible y
-                                asistencia en caso de fallas menores.</p>
-                        </div>
-                    </div>
-                    <!-- Q7 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>07.</span> ¿Qué son las fianzas y para qué sirven?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Son instrumentos que avalan el cumplimiento de obligaciones legales y comerciales. Sirven
-                                para garantizar contratos de obra o servicios, respaldar pagos aduanales, asegurar
-                                compromisos laborales y cumplir con diversas obligaciones legales.</p>
-                        </div>
-                    </div>
-                    <!-- Q8 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>08.</span> ¿Cómo puedo presentar un reclamo?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Puedes hacerlo a través de nuestro Call Center al 0212 614 22 31 para recibir asistencia
-                                inmediata, o enviando un correo a atencion.personas@verticeseguros.com con la
-                                notificación y documentos necesarios.</p>
-                        </div>
-                    </div>
-                    <!-- Q9 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>09.</span> ¿Qué reaseguradores respaldan a Vértice Seguros?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Contamos con el respaldo de prestigiosas empresas de reaseguro como Reaseguradora Delta,
-                                RIV (Reaseguradora Internacional de Venezuela), Redbridge Insurance Company, On Re y
-                                Worldwide Reinsurance Limited.</p>
-                        </div>
-                    </div>
-                    <!-- Q10 -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h4><span>10.</span> ¿Cómo puedo contactar a Vértice Seguros?</h4>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Puedes contactarnos visitando nuestra web, llamando al 0212 614 22 31 de lunes a viernes
-                                (8:00 AM - 5:00 PM), o acercándote a nuestra oficina en El Bosque, Chacao, Caracas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Footer -->
-        <footer id="contacto" class="footer">
-            <div class="container footer-grid">
-                <div class="footer-column footer-brand">
-                    <div class="footer-logo">
-                        <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/03/Recurso-3.svg"
-                            alt="Vértice Seguros Logo">
-                    </div>
-                    <p class="footer-desc">En Vértice Seguros tu tranquilidad es nuestra prioridad. Contamos con
-                        atención personalizada y coberturas adaptadas a tus necesidades.</p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/verticeseguros_ve/" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Contáctanos</h3>
-                    <ul class="footer-contact-list">
-                        <li><i class="fas fa-phone"></i> <a href="tel:02126142231">(0212) 614.22.31</a></li>
-                        <li><i class="fas fa-clock"></i> Lunes a Viernes 8.00 am - 5.00 pm</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Avenida Francisco de Miranda con Avenida El Parque,
-                            Edificio Torre Country Club, Piso 11, Oficina N 11, Urbanización El Bosque, Chacao. Caracas.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li>Vértice Seguros, C.A.</li>
-                        <li>Inscrita en la SUDEASEG bajo el N° ES-124</li>
-                        <li>RIF: J-50070262-0</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="container">
-                    <p>&copy; 2026 Vértice Seguros, C.A. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </footer>
+        {{> footer }}
     </div>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/584122969420" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    <!-- Main Script -->
     <script type="module" src="/src/main.ts"></script>
 </body>
 

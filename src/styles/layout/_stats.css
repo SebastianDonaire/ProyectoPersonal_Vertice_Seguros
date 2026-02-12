@@ -1,0 +1,91 @@
+/* 
+  ================================================================
+  LAYOUT: STATS (IMPACT COUNTERS)
+  ================================================================
+  - Contadores animados
+  - Grid de estadísticas
+*/
+.stats-section {
+    padding: 60px 0;
+    background: var(--primary);
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-content {
+    position: relative;
+}
+
+.stat-number,
+.stat-text-simple {
+    font-size: 48px;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.stat-text-simple {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.stat-plus,
+.stat-suffix {
+    font-size: 24px;
+    font-weight: 700;
+    vertical-align: super;
+}
+
+.stat-item p {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,113 @@
+/* 
+  ================================================================
+  2. BASE & RESETS
+  ================================================================
+  - Reset básico de márgenes y padding
+  - Configuración de box-sizing
+  - Estilos base de HTML y Body
+  - Configuración de enlaces, imágenes y listas
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    height: auto;
+    overflow-y: visible;
+}
+
+/* Fix for fixed header overlap on anchor links */
+section[id],
+div[id] {
+    scroll-margin-top: 130px;
+}
+
+/* Override for snapped sections to avoid centering offsets */
+.why-us-section {
+    scroll-margin-top: 130px !important;
+    scroll-margin-bottom: 0 !important;
+}
+
+/* Specific offset for product sections */
+.service-block[id] {
+    scroll-margin-top: 130px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography Helpers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.sub-title {
+    color: var(--secondary);
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.large-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.sec-title {
+    margin-bottom: 60px;
+}
+
+.sec-title.centred {
+    text-align: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+/* 3. PRELOADER
+================================================================ */

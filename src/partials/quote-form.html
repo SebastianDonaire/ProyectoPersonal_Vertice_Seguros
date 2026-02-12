@@ -1,0 +1,207 @@
+<!-- 
+  ================================================================
+  PARTIAL: QUOTE FORM (COTIZADOR)
+  ================================================================
+  Contiene:
+  - Tabs para diferentes tipos de seguro (Salud, Auto, etc.)
+  - Formularios específicos para cada tipo
+  - Imagen lateral decorativa
+-->
+<section id="cotizar" class="quote-section reveal">
+    <div class="container quote-container">
+        <div class="quote-tabs-wrapper">
+            <div class="quote-image">
+                <img src="https://verticeseguros.com.ve/wp-content/uploads/2025/10/men-2.webp"
+                    alt="Asesor de seguros Vértice ofreciendo atención personalizada" loading="lazy" width="600"
+                    height="auto">
+            </div>
+            <div class="quote-tabs-content">
+                <div class="quote-header">
+                    <span class="sub-title">Cotiza en Vértice Seguros</span>
+                    <h2>Solicita tu Cotización Fácil y Segura</h2>
+                </div>
+                <div class="tabs-buttons">
+                    <button class="tab-btn active" data-tab="salud">Salud</button>
+                    <button class="tab-btn" data-tab="personas">Personas</button>
+                    <button class="tab-btn" data-tab="automovil">Automóvil</button>
+                    <button class="tab-btn" data-tab="patrimoniales">Patrimoniales</button>
+                    <button class="tab-btn" data-tab="fianzas">Fianzas</button>
+                </div>
+                <div class="tabs-body">
+                    <!-- Formulario Salud (Default) -->
+                    <div id="salud" class="tab-pane active">
+                        <form class="quote-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Nombre y Apellido" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Edad del Titular" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Edad grupo asegurado" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Sexo</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Masculino">Masculino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Teléfono" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Correo Electrónico" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario Personas -->
+                    <div id="personas" class="tab-pane">
+                        <form class="quote-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Producto</option>
+                                        <option value="Accidentes Personales">Accidentes Personales</option>
+                                        <option value="Servicios Funerario">Servicios Funerario</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Nombre y Apellido" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Edad del Titular" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Teléfono" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="email" placeholder="Correo Electrónico" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario Automóvil -->
+                    <div id="automovil" class="tab-pane">
+                        <form class="quote-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Tipo de Producto</option>
+                                        <option value="Cobertura Amplia">Cobertura Amplia</option>
+                                        <option value="Pérdida Total">Pérdida Total</option>
+                                        <option value="RCV Básico de Ley">RCV Básico de Ley</option>
+                                        <option value="RCV con Exceso">RCV con Exceso</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Nombre y Apellido" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Marca" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Modelo" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Año del Vehículo" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Teléfono" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="email" placeholder="Correo Electrónico" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
+                        </form>
+                    </div>
+                    <!-- Formulario Patrimoniales -->
+                    <div id="patrimoniales" class="tab-pane">
+                        <form class="quote-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Nombre y Apellido" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="CI o RIF" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="¿Qué producto deseas cotizar?" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Teléfono" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="email" placeholder="Correo Electrónico" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario Fianzas -->
+                    <div id="fianzas" class="tab-pane">
+                        <form class="quote-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Nombre y Apellido" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="RIF" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Ubicación" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Tipo de Fianza</option>
+                                        <option value="Mantenimiento de la Oferta">Mantenimiento de la
+                                            Oferta</option>
+                                        <option value="Fianza de Anticipo">Fianza de Anticipo</option>
+                                        <option value="Fianza de fiel cumplimiento">Fianza de fiel
+                                            cumplimiento</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Teléfono" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Correo Electrónico" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Cotizar ahora</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

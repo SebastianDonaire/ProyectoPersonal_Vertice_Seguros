@@ -1,0 +1,317 @@
+/* 
+  ================================================================
+  LAYOUT: DEFENSOR DEL ASEGURADO
+  ================================================================
+  - Sección de información del defensor
+  - Timeline horizontal/vertical de pasos de reclamación
+  - Cards de contacto y descarga
+*/
+.defensor-section {
+    padding: 80px 0 100px;
+    background-color: var(--bg-soft);
+    position: relative;
+    overflow: hidden;
+    border-top: none !important;
+    scroll-margin-top: 65px !important;
+}
+
+/* Fix for rogue line above defensor section and spacing */
+#fianzas-seccion {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+#servicios-detalle {
+    padding-bottom: 0 !important;
+}
+
+.defensor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.defensor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.defensor-card {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(29, 61, 118, 0.03);
+    transition: var(--transition);
+}
+
+.defensor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+}
+
+.defensor-card .icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-light);
+    color: var(--secondary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.contact-card {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(29, 61, 118, 0.05);
+}
+
+.contact-links li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.contact-links i {
+    color: var(--secondary);
+    font-size: 18px;
+}
+
+/* Download Card (Premium Call to Action) */
+.download-card {
+    background: var(--primary-gradient);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 40px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.download-card h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.download-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.download-card .btn-primary {
+    background: white;
+    color: var(--primary) !important;
+    border: none;
+    padding: 15px 35px;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.download-card .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background: var(--bg-soft);
+}
+
+/* Steps Column */
+.defensor-steps {
+    background: white;
+    padding: 50px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-premium);
+    border: 1px solid rgba(29, 61, 118, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.defensor-steps h3 {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(29, 61, 118, 0.05);
+}
+
+.steps-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 10px;
+    flex: 1;
+}
+
+/* Línea de conexión continua */
+.steps-timeline::before {
+    content: '';
+    position: absolute;
+    left: 69px;
+    /* 10px padding-left del contenedor + 20px padding del item + 40px radio - 1px = 69px */
+    top: 60px;
+    bottom: 60px;
+    width: 2px;
+    background: rgba(40, 93, 187, 0.15);
+    z-index: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.steps-timeline.visible::before {
+    transform: scaleY(1);
+}
+
+.step-item-horizontal {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    flex: 1;
+    padding: 25px 20px;
+    border-radius: 16px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Segmento de resaltado activo con animación premium */
+.step-item-horizontal::after {
+    display: none;
+    /* Línea animada deshabilitada */
+    content: '';
+    position: absolute;
+    left: 59px;
+    top: 0;
+    bottom: 0;
+    /* Se extiende hasta el final del contenedor */
+    width: 2px;
+    background: var(--secondary);
+    transform: scaleY(0);
+    transform-origin: top;
+    z-index: -1;
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Ajustes de extremos para la línea activa */
+.step-item-horizontal:first-child::after {
+    top: 60px;
+    /* Empieza desde el centro del primer icono */
+}
+
+.step-item-horizontal:last-child::after {
+    bottom: auto;
+    height: 60px;
+    /* Solo hasta el centro del último icono */
+}
+
+/* Ocultar línea de pasos no activos que vienen después */
+.step-item-horizontal:not(.active)~.step-item-horizontal::after {
+    display: none;
+}
+
+/* Línea individual eliminada para usar la continua del contenedor */
+.step-item-horizontal::before {
+    display: none;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border: 2px solid rgba(29, 61, 118, 0.12);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 26px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-item-horizontal:hover .step-icon {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* Scroll-based active highlight */
+.step-item-horizontal.active {
+    background: var(--bg-soft);
+}
+
+.step-item-horizontal.active .step-icon {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 6px rgba(40, 93, 187, 0.15), 0 10px 25px rgba(40, 93, 187, 0.25);
+    transform: scale(1.1);
+    transition-delay: 0.2s;
+}
+
+.step-item-horizontal.active .step-text h4 {
+    color: var(--secondary);
+}
+
+.step-text {
+    flex: 1;
+    opacity: 0.7;
+    transform: translateY(5px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s,
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.step-item-horizontal.active .step-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-text h4 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+}
+
+.step-text p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+    .defensor-grid {
+        grid-template-columns: 1fr;
+    }
+}
