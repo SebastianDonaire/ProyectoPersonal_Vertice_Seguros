@@ -1396,6 +1396,26 @@ h6 {
     flex: 1;
 }
 
+/* Línea de conexión continua */
+.steps-timeline::before {
+    content: '';
+    position: absolute;
+    left: 69px;
+    /* 10px padding-left del contenedor + 20px padding del item + 40px radio - 1px = 69px */
+    top: 60px;
+    bottom: 60px;
+    width: 2px;
+    background: rgba(40, 93, 187, 0.15);
+    z-index: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.steps-timeline.visible::before {
+    transform: scaleY(1);
+}
+
 .step-item-horizontal {
     display: flex;
     gap: 30px;
@@ -1408,21 +1428,46 @@ h6 {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Per-item connector line */
-.step-item-horizontal::before {
+/* Segmento de resaltado activo con animación premium */
+.step-item-horizontal::after {
+    display: none;
+    /* Línea animada deshabilitada */
     content: '';
     position: absolute;
-    left: 60px;
-    top: 50%;
-    height: calc(100% + 0px);
+    left: 59px;
+    top: 0;
+    bottom: 0;
+    /* Se extiende hasta el final del contenedor */
     width: 2px;
-    background: rgba(29, 61, 118, 0.1);
-    transform: translateX(-50%);
+    background: var(--secondary);
+    transform: scaleY(0);
+    transform-origin: top;
     z-index: -1;
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hide line for the last item */
-.step-item-horizontal:last-child::before {
+
+/* Ajustes de extremos para la línea activa */
+.step-item-horizontal:first-child::after {
+    top: 60px;
+    /* Empieza desde el centro del primer icono */
+}
+
+.step-item-horizontal:last-child::after {
+    bottom: auto;
+    height: 60px;
+    /* Solo hasta el centro del último icono */
+}
+
+/* Ocultar línea de pasos no activos que vienen después */
+.step-item-horizontal:not(.active)~.step-item-horizontal::after {
+    display: none;
+}
+
+/* Línea individual eliminada para usar la continua del contenedor */
+.step-item-horizontal::before {
     display: none;
 }
 
@@ -1440,7 +1485,7 @@ h6 {
     font-size: 26px;
     flex-shrink: 0;
     box-shadow: var(--shadow-sm);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .step-item-horizontal:hover .step-icon {
@@ -1460,6 +1505,7 @@ h6 {
     border-color: var(--secondary);
     box-shadow: 0 0 0 6px rgba(40, 93, 187, 0.15), 0 10px 25px rgba(40, 93, 187, 0.25);
     transform: scale(1.1);
+    transition-delay: 0.2s;
 }
 
 .step-item-horizontal.active .step-text h4 {
@@ -1468,6 +1514,15 @@ h6 {
 
 .step-text {
     flex: 1;
+    opacity: 0.7;
+    transform: translateY(5px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s,
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.step-item-horizontal.active .step-text {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .step-text h4 {

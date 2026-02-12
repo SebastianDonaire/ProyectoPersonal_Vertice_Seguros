@@ -161,28 +161,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 8. Scroll-based Step Highlighting (Proceso de Reclamación)
-  const defensorSteps = document.querySelector('.defensor-steps');
-  if (defensorSteps) {
-    const stepItems = defensorSteps.querySelectorAll('.step-item-horizontal');
-    let stepsAnimated = false;
-
-    const stepObserver = new IntersectionObserver((entries) => {
+  // Primero, animar la línea de fondo
+  const stepsTimeline = document.querySelector('.steps-timeline');
+  if (stepsTimeline) {
+    const timelineObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !stepsAnimated) {
-          stepsAnimated = true;
-          stepItems.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('active');
-            }, index * 400);
-          });
-        } else if (!entry.isIntersecting && stepsAnimated) {
-          stepsAnimated = false;
-          stepItems.forEach(item => item.classList.remove('active'));
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.3 });
+    }, {
+      threshold: 0.3
+    });
+    timelineObserver.observe(stepsTimeline);
+  }
 
-    stepObserver.observe(defensorSteps);
+  // Luego, animar los steps individuales
+  const stepItems = document.querySelectorAll('.step-item-horizontal');
+  if (stepItems.length > 0) {
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, {
+      threshold: 0.5,
+      rootMargin: "-10% 0px -10% 0px" // Margen para que se active/desactive un poco antes de salir/entrar totalmente
+    });
+
+    stepItems.forEach(item => stepObserver.observe(item));
   }
 
   console.log('App initialized: Vertice Seguros Clone (v2 legalized)');
