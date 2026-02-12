@@ -340,7 +340,7 @@ h6 {
 ================================================================ */
 .hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -953,10 +953,10 @@ h6 {
 
 .why-us-body {
     width: 100%;
-    padding-left: 8%;
+    padding-left: 12%;
+    /* Incrementado de 8% para centrar un poco más el contenido */
     position: relative;
     z-index: 2;
-
 }
 
 .why-us-content {
@@ -1013,6 +1013,7 @@ h6 {
 
 .why-footer-logo {
     margin-top: 80px;
+    margin-left: 20px;
 }
 
 .why-footer-logo img {
@@ -1022,7 +1023,8 @@ h6 {
 
 .satisfaction-badge {
     position: absolute;
-    bottom: 50px;
+    bottom: 35px;
+    /* Bajado de 50px para alinear con el logo */
     right: 15%;
     background: white;
     padding: 25px 40px;
